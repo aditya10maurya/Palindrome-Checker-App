@@ -1,14 +1,14 @@
-import java.util.ArrayDeque;
 import java.util.Deque;
+import java.util.ArrayDeque;
 
 public class Palindromecheckerapp {
 
     public static void main(String[] args) {
 
-        // Input string (you can modify this)
-        String input = "level";
+        // Input string (you can change this)
+        String input = "radar";
 
-        // Create a Deque
+        // Create Deque
         Deque<Character> deque = new ArrayDeque<>();
 
         // Insert characters into deque
@@ -16,21 +16,21 @@ public class Palindromecheckerapp {
             deque.addLast(input.charAt(i));
         }
 
-        // Flag to track palindrome status
+        // Flag to check palindrome
         boolean isPalindrome = true;
 
         // Compare front and rear elements
         while (deque.size() > 1) {
-            char front = deque.removeFirst();
-            char rear = deque.removeLast();
+            char first = deque.removeFirst();
+            char last = deque.removeLast();
 
-            if (front != rear) {
+            if (first != last) {
                 isPalindrome = false;
                 break;
             }
         }
 
-        // Display result
+        // Print result
         if (isPalindrome) {
             System.out.println("The string \"" + input + "\" is a Palindrome.");
         } else {
